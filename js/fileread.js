@@ -1,4 +1,4 @@
-var fileInput = document.getElementById('stl');
+/*var fileInput = document.getElementById('stl');
 var fReader = new FileReader();
 
 fileInput.onchange = function(e) {
@@ -9,6 +9,18 @@ fReader.onload = function (e) {
 	var geometry = readSTL (e.target.result);
 	geometry.center ();
 	updateGeo (geometry);
+}
+*/
+window.onload = async function () {
+
+        const bridgeComplete = 'CAD-Portfolio/BridgeMini3DPrintable/300%20mm%20Bridge%20Complete.stl';
+         
+	const arrayBufferSTL = await get(bridgeComplete);
+	//Hopefully this works
+	var geometry2 = readSTL (arrayBufferSTL);
+	geometry2.center ();
+	updateGeo (geometry2);
+
 }
 
 function readSTL (stl) {
@@ -63,3 +75,9 @@ function readSTL (stl) {
 	return geometry;
 }
 
+async function get(url) {
+    const response = await fetch(url, {
+      mode: 'no-cors'
+ });
+    return response.arrayBuffer();
+}

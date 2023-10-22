@@ -1,4 +1,4 @@
-var fileInput = document.getElementById('stl');
+/*var fileInput = document.getElementById('stl');
 var fReader = new FileReader();
 
 fileInput.onchange = function(e) {
@@ -20,7 +20,7 @@ fReader.onload = function (e) {
 	console.log (normals);
 	main (vertices, indices, normals, center_x, center_y, center_z);
 }
-
+*/
 window.onload = async function () {
 
         const bridge = 'CAD-Portfolio/BridgeMini3DPrintable/East_Side.stl';
