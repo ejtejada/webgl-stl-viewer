@@ -1,4 +1,4 @@
-/*var fileInput = document.getElementById('stl');
+var fileInput = document.getElementById('stl');
 var fReader = new FileReader();
 
 fileInput.onchange = function(e) {
@@ -10,16 +10,16 @@ fReader.onload = function (e) {
 	geometry.center ();
 	updateGeo (geometry);
 }
-*/
+
 window.onload = async function () {
 
     const bridgeComplete = '../CAD-Portfolio/ErgonomicFightStick/Top_Plate.stl';
          
 	const arrayBufferSTL = await get(bridgeComplete);
 	//Hopefully this works
-	var geometry2 = readSTL (arrayBufferSTL);
-	geometry2.center ();
-	updateGeo (geometry2);
+	var geometry = readSTL (arrayBufferSTL);
+	geometry.center ();
+	updateGeo (geometry);
 
 }
 
