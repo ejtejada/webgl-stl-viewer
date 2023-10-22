@@ -23,7 +23,7 @@ fReader.onload = function (e) {
 */
 window.onload = async function () {
 
-        const bridge = 'CAD-Portfolio/BridgeMini3DPrintable/East_Side.stl';
+        const bridge = '../CAD-Portfolio/BridgeMini3DPrintable/East_Side.stl';
 	//var bridge = 'East_Side.stl'; 
 	const arrayBufferSTL = await get(bridge);
 	//Hopefully this works
