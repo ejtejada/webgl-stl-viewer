@@ -15,14 +15,14 @@ var directionalLight = new THREE.DirectionalLight( 0xffffff );
 var material = new THREE.MeshPhongMaterial( { overdraw: true, color: 0xff0000, shininess: 30} );
 var mesh;
 
-camera.position.z = 20;
+camera.position.z = 120;
 camera.position.x = 0;
 camera.position.y = 0;
 
 var animate = function () {
 	if (mesh) {
 		mesh.rotation.y += 0.01;
-		mesh.rotation.z += 0.01;
+		mesh.rotation.z += 0.00;
 	}
 
 	renderer.render (scene, camera);
