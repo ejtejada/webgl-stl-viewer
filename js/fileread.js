@@ -13,7 +13,7 @@ fReader.onload = function (e) {
 */
 window.onload = async function () {
 
-        const bridgeComplete = '../CAD-Portfolio/BridgeMini3DPrintable/East_Side.stl';
+    const bridgeComplete = '../CAD-Portfolio/ErgonomicFightStick/Top_Plate.stl';
          
 	const arrayBufferSTL = await get(bridgeComplete);
 	//Hopefully this works
