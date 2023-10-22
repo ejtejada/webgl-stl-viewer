@@ -13,11 +13,11 @@ fReader.onload = function (e) {
 
 window.onload = async function () {
 
-    const bridgeComplete = '../CAD-Portfolio/ErgonomicFightStick/Top_Plate.stl';
+    const bridgeComplete = '../CAD-Portfolio/BridgeMini3DPrintable/Complete_Bridge.stl';
          
-	const arrayBufferSTL = await get(bridgeComplete);
+	const arrayBridge = await get(bridgeComplete);
 	//Hopefully this works
-	var geometry = readSTL (arrayBufferSTL);
+	var geometry = readSTL(arrayBridge);
 	geometry.center ();
 	updateGeo (geometry);
 
