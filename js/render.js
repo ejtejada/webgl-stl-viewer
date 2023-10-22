@@ -2,7 +2,7 @@ var scene = new THREE.Scene();
 var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
 var renderer = new THREE.WebGLRenderer();
-renderer.setSize(640, 480);
+renderer.setSize(1280, 720);//Original 640x480 is too small!
 document.body.appendChild(renderer.domElement);
 
 var directionalLight = new THREE.DirectionalLight( 0xffffff );
@@ -15,13 +15,14 @@ var directionalLight = new THREE.DirectionalLight( 0xffffff );
 var material = new THREE.MeshPhongMaterial( { overdraw: true, color: 0xff0000, shininess: 30} );
 var mesh;
 
-camera.position.z = 50;
+camera.position.z = 20;
 camera.position.x = 0;
 camera.position.y = 0;
 
 var animate = function () {
 	if (mesh) {
 		mesh.rotation.y += 0.01;
+		mesh.rotation.z += 0.01;
 	}
 
 	renderer.render (scene, camera);
