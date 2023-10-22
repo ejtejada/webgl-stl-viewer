@@ -5,7 +5,7 @@ fileInput.onchange = function(e) {
     fReader.readAsArrayBuffer(this.files[0]);
 }
 
-fReader.onload = function (e) {
+/*fReader.onload = function (e) {
 	var result = readSTL (e.target.result);
 	var vertices = result[0],
 		indices = result[1],
@@ -20,6 +20,29 @@ fReader.onload = function (e) {
 	console.log (normals);
 	main (vertices, indices, normals, center_x, center_y, center_z);
 }
+*/
+window.onload = function () {
+    //var eastStl = url2blob('East_Side.stl');
+	arrayBufferSTL = loadSTL();
+	//Hopefully this works
+	var result = readSTL (arrayBufferSTL);
+	//var result = readSTL (e.target.result);
+	var vertices = result[0],
+		indices = result[1],
+		normals = result[2];
+
+	var center_x = (max_x + min_x)/2;
+	var center_y = (max_y + min_y)/2;
+	var center_z = (max_z + min_z)/2;
+
+	// TODO: properly calculate normals
+
+	console.log (normals);
+	main (vertices, indices, normals, center_x, center_y, center_z);
+
+}
+
+
 
 var min_x = 10000000,
 	max_x = -10000000,
@@ -27,6 +50,29 @@ var min_x = 10000000,
 	max_y = -10000000,
 	min_z = 10000000,
 	max_z = -10000000;
+
+
+async function loadSTL() {
+  const response = await fetch('https://github.com/ejtejada/CAD-Portfolio/blob/3210fad8c2738ae23c787aafb181e287cd6c3d67/BridgeMini3DPrintable/East_Side.stl');
+  const arrayBuffer = await response.arrayBuffer();
+  return arrayBuffer;
+}
+
+
+async function url2blob(url) {
+  try {
+    const data = await fetch(url);
+    const blob = await data.blob();
+    await navigator.clipboard.write([
+      new ClipboardItem({
+        [blob.type]: blob
+      })
+    ]);
+    console.log("Success.");
+  } catch (err) {
+    console.error(err.name, err.message);
+  }
+}
 
 function readSTL (stl) {
 	var vertices = [],
