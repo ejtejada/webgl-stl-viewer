@@ -15,7 +15,7 @@ var directionalLightRoad = new THREE.DirectionalLight( 0xffffff );
 var materialRoad = new THREE.MeshPhongMaterial( { overdraw: true, color: 0xff0000, shininess: 30} );
 var meshRoad;
 
-cameraRoad.position.z = 50;
+cameraRoad.position.z = 30;
 cameraRoad.position.x = 0;
 cameraRoad.position.y = 0;
 
