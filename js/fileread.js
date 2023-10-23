@@ -1,4 +1,4 @@
-var fileInput = document.getElementById('stl');
+/*var fileInput = document.getElementById('stl');
 var fReader = new FileReader();
 
 fileInput.onchange = function(e) {
@@ -10,7 +10,7 @@ fReader.onload = function (e) {
 	geometry.center ();
 	updateGeo (geometry);
 }
-
+*/
 window.onload = async function () {
 
     const bridgeComplete = '../CAD-Portfolio/BridgeMini3DPrintable/Complete_Bridge.stl';
