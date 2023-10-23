@@ -22,7 +22,7 @@ camera.position.y = 0;
 var animate = function () {
 	if (mesh) {
 		mesh.rotation.y += 0.01;
-		mesh.rotation.z += 0.00;
+		mesh.rotation.z += 0.01;
 	}
 
 	renderer.render (scene, camera);
