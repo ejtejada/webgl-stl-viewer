@@ -13,17 +13,17 @@ fReader.onload = function (e) {
 */
 window.onload = async function () {
 
-    const bridgeComplete = '../CAD-Portfolio/BridgeMini3DPrintable/purple%20reign%20bridge.stl.stl';
+    const bridgeRoad = '../CAD-Portfolio/BridgeMini3DPrintable/purple%20reign%20bridge.stl.stl';
          
-	const arrayBridge = await get(bridgeComplete);
+	const arrayRoad = await get(bridgeRoad);
 	//Hopefully this works
-	var geometry = readSTL(arrayBridge);
+	var geometry = readSTLRoad(arrayRoad);
 	geometry.center ();
-	updateGeo (geometry);
+	updateGeoRoad (geometry);
 
 }
 
-function readSTL (stl) {
+function readSTLRoad (stl) {
 	var geometry = new THREE.Geometry ();
 
 	var dv = new DataView (stl, 80); // ignore 80-byte header (assuming binary STL)

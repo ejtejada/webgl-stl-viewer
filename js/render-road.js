@@ -1,41 +1,41 @@
-var scene = new THREE.Scene();
-var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+var sceneRoad = new THREE.Scene();
+var cameraRoad = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
-var renderer = new THREE.WebGLRenderer();
-renderer.setSize(1280, 720);//Original 640x480 is too small!
-document.body.appendChild(renderer.domElement);
+var rendererRoad = new THREE.WebGLRenderer();
+rendererRoad.setSize(1280, 720);//Original 640x480 is too small!
+document.body.appendChild(rendererRoad.domElement);
 
-var directionalLight = new THREE.DirectionalLight( 0xffffff );
-                directionalLight.position.x = 0; 
-                directionalLight.position.y = 0; 
-                directionalLight.position.z = 1; 
-                directionalLight.position.normalize();
-                scene.add( directionalLight );
+var directionalLightRoad = new THREE.DirectionalLight( 0xffffff );
+                directionalLightRoad.position.x = 0; 
+                directionalLightRoad.position.y = 0; 
+                directionalLightRoad.position.z = 1; 
+                directionalLightRoad.position.normalize();
+                sceneRoad.add( directionalLightRoad );
 
-var material = new THREE.MeshPhongMaterial( { overdraw: true, color: 0xff0000, shininess: 30} );
-var mesh;
+var materialRoad = new THREE.MeshPhongMaterial( { overdraw: true, color: 0xff0000, shininess: 30} );
+var meshRoad;
 
-camera.position.z = 50;
-camera.position.x = 0;
-camera.position.y = 0;
+cameraRoad.position.z = 50;
+cameraRoad.position.x = 0;
+cameraRoad.position.y = 0;
 
-var animate = function () {
-	if (mesh) {
-		mesh.rotation.y += 0.01;
-		mesh.rotation.z += 0.00;
+var animateRoad = function () {
+	if (meshRoad) {
+		meshRoad.rotation.y += 0.01;
+		meshRoad.rotation.z += 0.00;
 	}
 
-	renderer.render (scene, camera);
+	rendererRoad.render (sceneRoad, cameraRoad);
 
-	requestAnimationFrame (animate);
+	requestAnimationFrame (animateRoad);
 }
 
-function updateGeo(geometry) {
+function updateGeoRoad(geometry) {
 	geometry.computeFaceNormals();
-	mesh = new THREE.Mesh (geometry,     
-		material
+	meshRoad = new THREE.Mesh (geometry,     
+		materialRoad
 	);
 
-	scene.add (mesh);
-	renderer.render (scene, camera);
+	sceneRoad.add (meshRoad);
+	rendererRoad.render (sceneRoad, cameraRoad);
 }
