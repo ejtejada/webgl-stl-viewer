@@ -13,8 +13,7 @@ fReader.onload = function (e) {
 */
 window.onload = async function () {
 
-    const bridgeComplete = '../../CAD-Portfolio/BridgeMini3DPrintable/purple%20reign%20bridge_MIR.stl';
-         
+	 const bridgeComplete = '../../CAD-Portfolio/BridgeMini3DPrintable/purple%20reign%20bridge.stl';
 	const arrayBridge = await get(bridgeComplete);
 	//Hopefully this works
 	var geometry = readSTL(arrayBridge);
