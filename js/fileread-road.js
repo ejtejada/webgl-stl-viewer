@@ -13,7 +13,7 @@ fReader.onload = function (e) {
 */
 window.onload = async function () {
 
-    const bridgeRoad = '../CAD-Portfolio/BridgeMini3DPrintable/purple%20reign%20bridge.stl.stl';
+    const bridgeRoad = '../CAD-Portfolio/BridgeMini3DPrintable/purple%20reign%20bridge.stl';
          
 	const arrayRoad = await get(bridgeRoad);
 	//Hopefully this works
