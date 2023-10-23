@@ -23,9 +23,9 @@ fReader.onload = function (e) {
 */
 window.onload = async function () {
 
-        const bridge = '../CAD-Portfolio/BridgeMini3DPrintable/East_Side.stl';
+        const bridgeComplete = '../CAD-Portfolio/BridgeMini3DPrintable/Complete_Bridge.stl';
 	//var bridge = 'East_Side.stl'; 
-	const arrayBufferSTL = await get(bridge);
+	const arrayBufferSTL = await get(bridgeComplete);
 	//Hopefully this works
 	var result2 = readSTL(arrayBufferSTL);
 	//var result = readSTL (e.target.result);
