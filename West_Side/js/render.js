@@ -12,7 +12,7 @@ var directionalLight = new THREE.DirectionalLight( 0xffffff );
                 directionalLight.position.normalize();
                 scene.add( directionalLight );
 
-var material = new THREE.MeshPhongMaterial( { overdraw: true, color: 0xff0000, shininess: 30} );
+var material = new THREE.MeshPhongMaterial( { overdraw: true, color: 0x06965b, shininess: 30} );
 var mesh;
 
 camera.position.z = 20;
